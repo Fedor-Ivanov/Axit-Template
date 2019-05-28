@@ -1,0 +1,9 @@
+
+.slick-track{
+	@include flex($ai: flex-end);
+}
+	
+
+.slick-slide:focus {
+	outline: none;
+}

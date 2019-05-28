@@ -1,0 +1,881 @@
+// ============================
+// IMPORTS
+// ============================
+@import "options"
+@import "default"
+@import "slick"
+
+// ============================
+// MAIN STYLES
+// ============================
+
+.container
+	padding-right: 10px
+	padding-left: 10px
+	width: 100%
+	max-width: nth($mediaBp, 1)
+	margin: auto
+
+.button_option-one
+	height: 42px
+	width: 135px
+	border: 2px solid #fff
+	color: #fff
+	background: transparent
+	display: block
+	text-align: center
+	font-size: 15px
+	line-height: 40px
+	transition: 0.2s
+	&:hover
+		color: #000
+		background: #fff
+
+.button_option-two
+	height: 42px
+	width: 120px
+	border-radius: 3px
+	color: #fff
+	background: $mainC1
+	display: block
+	text-align: center
+	font-size: 15px
+	line-height: 40px
+	transition: 0.2s
+	&:hover
+		background: $mainC2
+
+.row
+	display: block
+	width: 65px
+	height: 2px
+	background-color: #fff
+
+.row_option-two
+	display: block
+	width: 65px
+	height: 2px
+	background-color: #ff9b51
+
+.navigation
+	padding: 10px 0
+	width: 100%
+	background-color: #000
+	&_active
+		z-index: 9999
+		position: fixed
+	&__wrap
+		@include flex($jc: space-between, $ai: center)
+	&__logo
+		color: #fff
+		font-size: 30px
+		font-weight: bold
+		&_second-part
+			color: $mainC1
+			font-weight: lighter
+	&__links
+		&_active
+			padding-top: 20px
+			@include flex($ai: center, $fd: column, $fw: wrap)
+			width: 100%
+			height: 100vh
+			position: fixed
+			top: 61px
+			left: 0
+			background-color: #000
+		&-item
+			font-weight: 600
+			font-size: 14px
+			color: #b0b0b0
+			&:hover
+				color: $mainC1
+	&__button
+		display: none
+		color: $mainC3
+		cursor: pointer
+		font-size: 20px
+		&_active
+
+.navigation__links-item + .navigation__links-item
+	margin-left: 45px
+
+.header
+	background-image: linear-gradient(rgba(0,0,0,0.5)), url("../img/u2_state0.jpg")
+	background-size: cover
+	background-color: $mainC3
+	background-position: center
+	padding-bottom: 110px
+	&__logo
+		font-size: 80px
+	&-wrap
+		@include flex($jc: space-between)
+
+.form
+	border-radius: 3px
+	margin-top: 140px
+	width: 360px
+	height: 365px
+	background-color: #fff
+	text-align: center
+	&__input:focus ~ .form__input-label
+		transform: scale(.8)
+			origin: left center
+		top: -1px
+	&__title
+		font-size: 20px
+		background-color: $mainC3
+		font-weight: bold
+		padding: 18px 0
+		border-top-left-radius: 3px
+		border-top-right-radius: 3px
+		&_word
+			text-transform: uppercase
+			color: $mainC1
+	&__item
+		position: relative
+		padding: 0 10px
+	&__input
+		background-color: transparent
+		z-index: 5
+		position: relative
+		width: 100%
+		border: none
+		border-bottom: 1px solid #d6d6d6
+		padding: 10px 10px 15px 10px
+		margin-top: 30px
+		&::placeholder
+			font-family: "OpenSans"
+		&:focus
+			border-bottom: 1px solid $mainC1
+		&-label
+			z-index: 2
+			font-style: 12px
+			color: #626262
+			position: absolute
+			left: 15px
+			top: calc(50% - 2px)
+			transition: .3s
+			&_valid
+				transform: scale(.8)
+					origin: left center
+				top: -1px
+				z-index: 2
+				font-style: 12px
+				color: #626262
+				position: absolute
+				left: 15px
+	&__link
+		font-weight: 600
+		font-size: 15px
+		padding: 20px
+		background-color: $mainC1
+		color: #fff
+		margin-top: 50px
+		border-bottom-left-radius: 3px
+		border-bottom-right-radius: 3px
+		display: block
+		transition: 0.2s
+		&:hover
+			background-color: #000
+			color: $mainC1
+	&__area
+		width: 100%
+		border: none
+		border-bottom: 1px solid #d6d6d6
+		padding-bottom: 1px
+		margin-top: 30px
+		resize: none
+		color: #000
+		font-family: "OpenSans"
+		&::placeholder
+			font-family: "OpenSans"
+		&:focus
+			border-bottom: 1px solid $mainC1
+
+.form__input:focus ~ .form__input-label-contact
+		transform: scale(.8)
+			origin: left center
+		top: -1px
+
+.form__input-label-contact
+	z-index: 2
+	font-style: 12px
+	color: #626262
+	position: absolute
+	left: 15px
+	top: calc(50% - 80px)
+	transition: .3s
+	&_valid
+		transform: scale(.8)
+			origin: left center
+		top: -1px
+		z-index: 2
+		font-style: 12px
+		color: #626262
+		position: absolute
+		left: 15px
+
+.description
+	padding-top: 110px
+	width: 520px
+	&__main-text
+		padding-top: 30px
+		font-size: 36px
+		color: #fff
+		font-family: "Raleway"
+	&__row
+		margin: 40px 0 40px
+	&__sub-text
+		font-family: "Raleway"
+		font-weight: lighter
+		color: #a6a6a8
+	&__link
+		padding-top: 45px
+
+.brand-bar
+	background-color: #fff
+	&-wrap
+		padding-top: 20px
+		padding-bottom: 20px
+		@include flex($jc: space-between, $ai: center)
+	&__text-wrap
+	&__title
+		padding-top: 5px
+		font-weight: bold
+		font-size: 20px
+	&__sub-text
+		padding-top: 5px
+		color: #acadaf
+		font-size: 14px
+	&__links
+		@include flex($ai: center)
+		&-item
+			font-size: 48px
+			margin-left: 50px
+			color: #cccccc
+			&:hover
+				color: $mainC1
+
+.features
+	background-color: $mainC3
+	&-wrap
+		@include flex($jc: space-between)
+		padding-top: 140px
+		padding-bottom: 110px
+	&-tabs
+		width: 110px
+		&-content
+			display: none
+	&-description
+		&__title
+		font-size: 18px
+		width: 490px
+		margin-right: 200px
+		&__sub-text
+			color: #86878B
+			font-size: 14px
+			padding-top: 40px
+			p + p
+				padding-top: 30px
+	&__tab-item
+		line-height: 112px
+		text-align: center
+		font-weight: bold
+		height: 112px
+		width: 112px
+		border: 1px solid #fff
+		color: #fff
+		display: block
+		font-size: 15px
+		transition: 0.2s
+		background: $mainC2
+		&_active
+			background: $mainC1
+		&:hover
+			background: #86878B
+	&__button
+		margin-top: 40px
+
+.active-item
+	line-height: 112px
+	text-align: center
+	font-weight: bold
+	height: 112px
+	width: 112px
+	border: 1px solid #fff
+	color: #fff
+	display: block
+	font-size: 15px
+	transition: 0.2s
+	background-color: $mainC1
+
+.active-content
+	display: flex
+
+.features-slide-one
+	background-color: #fff
+	&__wrap
+		@include flex($jc: space-around)
+		padding-top: 85px
+		padding-bottom: 85px
+	&__sub-list
+		width: 450px
+		font-size: 14px
+		color: #86878b
+
+.features-slide-two
+	background-color: $mainC3
+	&__wrap
+		@include flex($jc: space-around)
+		padding-top: 85px
+		padding-bottom: 85px
+	&__sub-list
+		width: 450px
+		font-size: 14px
+		color: #86878b
+	
+.sub-list
+	&__description
+	&__wrap
+		margin-top: 40px
+		display: grid
+		grid-column-gap: 30px
+		grid-template-columns: 1fr 10fr
+		grid-template-rows: 0fr 1fr
+	&__name
+		color: #212121
+		font-size: 20px
+		font-weight: bold
+	&__row
+		margin: 20px 0 20px
+	&__icon
+		@include flex($jc: center, $ai: center)
+		grid-column-start: 1
+		grid-column-end: 1
+		grid-row-start: 1
+		grid-row-end: 3
+		color: $mainC1
+		width: 40px
+		height: 40px
+		line-height: 40px
+		border: 2px solid $mainC1
+		border-radius: 50%
+		text-align: center
+		font-size: 18px
+	&__title
+		grid-column-start: 2
+		grid-column-end: 2
+		grid-row-start: 1
+		grid-row-end: 2
+		color: #212121
+		font-weight: bold
+	&__text
+		grid-column-start: 2
+		grid-column-end: 2
+		grid-row-start: 2
+		grid-row-end: 3
+
+.process
+	margin-top: 100px
+	margin-bottom: 100px
+	&__wrap
+		@include flex($jc: center, $fd: column, $ai: center)
+	&__title
+		font-family: "Raleway"
+		font-weight: lighter
+		text-align: center
+		text-transform: uppercase
+	&__row
+		margin-top: 20px
+		margin-bottom: 20px
+	&__sub-text
+		font-size: 14px
+		color: #86878b
+	&__items-wrap
+		margin-top: 80px
+		@include flex($jc: space-around)
+	&__item
+		margin: 0 10px
+		@include flex($jc: center, $fd: column, $ai: center)
+		&-icon
+			width: 70px
+			height: 70px
+			border-radius: 50%
+			border: 2px solid $mainC1
+			color: $mainC1
+			font-size: 32px
+			@include flex($jc: center, $ai: center)
+		&-title
+			margin-top: 25px
+			margin-bottom: 25px
+			font-weight: bold
+			font-size: 20px
+			color: $mainC2
+		&-text
+			text-align: center
+			font-size: 14px
+			color: #86878b
+
+.pricing
+	background-color: $mainC3
+	padding-top: 100px
+	padding-bottom: 100px
+	&__wrap
+		@include flex($jc: center, $fd: column, $ai: center)
+	&__title
+		font-family: "Raleway"
+		font-style: 36px
+		font-weight: normal
+		text-align: center
+		text-transform: uppercase
+	&__row
+		margin-top: 20px
+		margin-bottom: 20px
+	&__sub-text
+		font-size: 14px
+		color: #86878b
+	&__tabs-wrap
+		margin-top: 80px
+	&__tab
+		@include flex($fd: column, $ai: center)
+		margin: 0 20px
+		&-item
+			@include flex($jc: center, $fd: column, $ai: center)
+			background-color: $mainC2
+			width: 100%
+			border-bottom: 6px solid $mainC1
+			color: #ffffff
+		&-title
+			padding-top: 20px
+			padding-bottom: 20px
+			font-size: 20px
+			font-weight: bold
+			width: 100%
+			text-align: center
+			border-bottom: 2px solid $mainC3
+		&-price
+			padding-top: 10px
+			font-size: 75px
+			font-family: "Raleway"
+			font-weight: bold
+			position: relative
+			&:before
+				content: "\f155"
+				position: absolute
+				font-size: 40px
+				font-family: Font Awesome\ 5 Free
+				font-weight: 900
+				left: -30px
+				bottom: 15px
+		&-description
+			padding-top: 10px
+			padding-bottom: 10px
+			font-weight: bolder
+			font-size: 14px
+			color: #999999
+			font-style: italic
+		&-popular
+			padding-top: 10px
+			padding-bottom: 10px
+			font-weight: bold
+			font-size: 14px
+			color: #ffffff
+			text-transform: uppercase
+			background-color: $mainC1
+			width: 100%
+			text-align: center
+		&-info
+			background-color: #fff
+			font-size: 14px
+			color: #86878b
+			width: 100%
+			text-align: center
+			text-transform: uppercase
+			&-cell
+				padding-top: 10px
+				padding-bottom: 10px
+				border-bottom: 1px solid $mainC3
+				&:last-child
+					border-bottom: none
+	
+.testemonials
+	background-color: #ffffff
+	padding-top: 100px
+	padding-bottom: 100px
+	&__wrap
+		@include flex($jc: center, $fd: column, $ai: center)
+	&__title
+		font-family: "Raleway"
+		font-style: 36px
+		font-weight: normal
+		text-align: center
+		text-transform: uppercase
+	&__row
+		margin-top: 20px
+		margin-bottom: 20px
+	&__sub-text
+		font-size: 14px
+		color: #86878b
+	&__items
+		margin-top: 50px
+	&__item
+		margin: 0 10px
+		display: grid
+		grid-column-gap: 15px
+		grid-template-columns: 1fr 4fr
+		grid-template-rows: 1fr 1fr
+		&-text
+			grid-column-start: 1
+			grid-column-end: -1
+			grid-row-start: 1
+			grid-row-end: 1
+			background-color: $mainC3
+			color: #86878b
+			font-style: italic
+			padding: 20px 10px
+			font-size: 14px
+		&-avatar
+			padding-top: 10px
+			grid-column-start: 1
+			grid-column-end: 1
+			grid-row-start: 2
+			grid-row-end: 4
+		&-person
+			@include flex($ai: flex-start, $jc: center, $fd: column)
+			grid-column-start: 2
+			grid-column-end: 2
+			grid-row-start: 2
+			grid-row-end: 2
+		&-name
+			font-size: 20px
+			font-weight: bold
+		&-position
+			font-size: 14px
+			color: #86878b
+
+.custom
+	padding-top: 80px
+	padding-bottom: 80px
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5)), url("../img/u25_state0.jpg")
+	background-size: cover
+	background-color: $mainC3
+	background-position: center
+	&__wrap
+		@include flex($jc: center, $fd: column, $ai: center)
+	&__title
+		font-size: 36px
+		font-family: "Raleway"
+		color: #ffffff
+	&__row
+		margin-top: 20px
+		margin-bottom: 20px
+	&__sub-text
+		color: #ffffff
+		font-family: "Raleway"
+		font-size: 16px
+		font-weight: lighter
+	&__link
+		margin-top: 30px
+
+.contact
+	padding-top: 100px
+	padding-bottom: 100px
+	background-color: #fff
+	&-form__item
+		position: relative
+		padding: 0 10px
+		&_name
+			position: relative
+			padding: 0 10px
+			grid-column-start: 1
+			grid-column-end: 1
+			grid-row-start: 1
+			grid-row-end: 1
+		&_email
+			position: relative
+			padding: 0 10px
+			grid-column-start: 1
+			grid-column-end: 1
+			grid-row-start: 2
+			grid-row-end: 2
+		&_subject
+			position: relative
+			padding: 0 10px
+			grid-column-start: 1
+			grid-column-end: 1
+			grid-row-start: 3
+			grid-row-end: 3
+		&_message
+			position: relative
+			padding: 0 10px
+			grid-column-start: 2
+			grid-column-end: 2
+			grid-row-start: 1
+			grid-row-end: 4
+	&__wrap
+		@include flex($jc: center, $fd: column, $ai: center)
+	&__title
+		font-size: 36px
+		font-family: "Raleway"
+		color: #212121
+	&__row
+		margin-top: 20px
+		margin-bottom: 20px
+	&__sub-text
+		color: #86878b
+		font-size: 14px
+	&-form
+		padding-top: 20px
+		display: grid
+		grid-template-columns: 1fr 1fr
+		grid-template-rows: 1fr 1fr 1fr
+		&__link
+			@include flex($jc: center)
+			margin-top: 35px
+			font-weight: 600
+			grid-column-start: 1
+			grid-column-end: 3
+			grid-row-start: 4
+			grid-row-end: 4
+			&-mes
+				width: 150px
+			
+.footer
+	padding-top: 30px
+	padding-bottom: 15px
+	background-color: #000
+	&-bar
+		@include flex($jc: center)
+		&__item
+			font-size: 24px
+	&__link
+		@include flex($jc: center, $ai: center)
+		font-style: 12px
+		margin-top: 15px
+		color: #808080
+
+// ============================
+// MEDIA
+// ============================
+
+@for $i from 1 to length($mediaBp)
+	@media (max-width: nth($mediaBp, $i))
+		.container
+			max-width: nth($mediaBp, $i + 1)
+
+@media (max-width: nth($mediaBp, 1))
+	.description
+		width: 310px
+		&__main-text
+			font-size: 25px
+	.features-description
+		margin-right: 20px
+		margin-left: 20px
+
+@media (max-width: nth($mediaBp, 2))
+
+	//brand-bar
+
+	.brand-bar-wrap
+		@include flex($jc: center, $fd: column, $ai: center)
+		text-align: center
+	.brand-bar__links-item
+		margin-left: 0
+	.brand-bar__links
+		width: 100%
+		margin-top: 20px
+		@include flex($jc: space-between)
+	
+	//pricing
+
+	.slick-track
+		@include flex($ai: flex-start)
+
+	//features
+
+	.features-tabs
+		@include flex($jc: space-around)
+		width: 100%
+		margin-bottom: 30px
+	.features__tab-item
+		width: 225px
+	.features-wrap
+		@include flex($jc: center, $fd: column, $ai: center)
+		padding: 50px 0
+	.features-tabs-content
+		@include flex($jc: center, $fd: column, $ai: center)
+	.features__button
+		margin-top: 20px
+	.features-description
+		@include flex($jc: center, $fd: column, $ai: center)
+	.features-description__sub-text
+		padding-top: 15px
+	.features-description__sub-text p + p
+		padding-top: 10px
+	.features-image
+		padding-top: 10px
+
+	//slide-one
+
+	.features-slide-one__wrap
+		@include flex($jc: center, $fd: column-reverse, $ai: center)
+		padding-top: 50px
+		padding-bottom: 0px
+	.features-slide-one__sub-list
+		@include flex($jc: center, $fd: column, $ai: center)
+	.sub-list__wrap
+		margin-top: 20px
+
+	//slide-two
+
+	.features-slide-two__wrap
+		@include flex($jc: center, $fd: column, $ai: center)
+		padding-top: 50px
+		padding-bottom: 0px
+
+	//custom
+
+	.custom
+		padding-top: 50px
+		padding-bottom: 50px
+	.custom__wrap
+		text-align: center
+
+	//contact
+
+	.contact
+		padding-top: 50px
+		padding-bottom: 50px
+
+@media (max-width: nth($mediaBp, 3))
+
+	//navigation
+
+	.navigation__links-item + .navigation__links-item
+		margin-top: 35px
+		margin-left: 0
+
+	.navigation__button
+		display: flex
+	.navigation__links
+		display: none
+	.navigation__links_active
+		display: flex
+
+	//contact
+
+	.contact-form
+		display: block
+
+	//header
+
+	.header
+		padding-bottom: 50px
+	.header-wrap
+		@include flex($jc: center, $fd: column, $ai: center)
+		height: auto
+		text-align: center
+	.form
+		margin-top: 50px
+	.description
+		@include flex($jc: center, $fd: column, $ai: center)
+		padding-top: 50px
+	.description__link
+		padding-top: 20px
+	.description__row
+		margin: 20px 0 20px
+
+@media (max-width: nth($mediaBp, 4))
+
+	//features
+
+	.features-description
+		width: auto
+	.features-image
+		display: none
+
+	//slide-one
+
+	.features-slide-one__wrap
+		padding-bottom: 50px
+	.features-slide-one__sub-list
+		width: auto
+	.features-slide-one__image
+		display: none
+	.sub-list__wrap
+		grid-template-rows: 1fr 2fr
+
+	//slide-two
+	
+	.features-slide-two__wrap
+		padding-bottom: 50px	
+	.features-slide-two__image
+		display: none
+	.features-slide-two__sub-list
+		width: auto
+
+	//process
+
+	.process
+		margin-top: 50px
+		margin-bottom: 50px
+	.process__items-wrap
+		margin-top: 30px
+
+	//pricing
+
+	.pricing
+		padding-top: 50px
+		padding-bottom: 50px
+	.pricing__tabs-wrap
+		margin-top: 30px
+
+	//testemonials
+
+	.testemonials
+		padding-top: 50px
+		padding-bottom: 50px
+	.testemonials__items
+		margin-top: 30px
+
+@media (max-width: nth($mediaBp, 5))
+
+	//header
+
+	.description
+		width: auto
+	.form
+		width: auto
+
+	//brand-bar
+
+	.brand-bar__links-item
+		font-size: 30px
+
+	//features
+
+	.sub-list__wrap
+		grid-template-columns: 1fr 5fr
+		grid-template-rows: 1fr 4fr
+
+	//process
+
+	.process
+		margin-top: 50px
+		margin-bottom: 50px
+	.process__items-wrap
+		margin-top: 30px
+
+	//pricing
+
+	.pricing
+		margin-top: 50px
+		margin-bottom: 50px
+	.pricing__tabs-wrap
+		margin-top: 30px
+
+	//testemonials
+	
+	.testemonials
+		padding-top: 0
+		padding-bottom: 0
